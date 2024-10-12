@@ -1,22 +1,25 @@
 # Greenlight
 
-It is based on the book ["Let's Go Further"][letsgof] by [Alex Edwards](https://www.alexedwards.net/).
+Me working through the book ["Let's Go Further"][letsgof] by [Alex Edwards](https://www.alexedwards.net/).
 
-## Prep the Database
+## Prerequisites
 
-Create a Docker instance of MariaDB for development purposes:
+- [Go 1.23](https://go.dev/) or later
+- [Air](https://github.com/air-verse/air) for live reloading:
+  ```shell
+  go install github.com/air-verse/air
+  ```
+- [Docker](https://www.docker.com/) for running Postgres in a container
+
+## Development
 
 ```shell
-docker run --name greenlight_dev \
-    -p 5432:5432 \
-    -e 'POSTGRES_PASSWORD=P@ssw0rd' \
-    -d postgres:14
+# Start the development server (Linux / MacOS)
+air
+
+# Windows
+air -c .air-win.toml
 ```
 
-**Seed DB**?
-
-```postgresql
-
-```
 
 [letsgof]: https://lets-go-further.alexedwards.net/ "Let's Go Further"
